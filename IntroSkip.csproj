@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net35</TargetFramework>
+    <AssemblyName>IntroSkip</AssemblyName>
+    <Description>Automatically skips splash screen logos (for Castle Story)</Description>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <CastleStoryManagedPath>$(PATH_TO_CASTLE_STORY)/Castle Story_Data/Managed</CastleStoryManagedPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.*" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
+    <PackageReference Include="UnityEngine.Modules" Version="5.6.5" IncludeAssets="compile" />
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(CastleStoryManagedPath)/Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MoonSharp.Interpreter">
+      <HintPath>$(CastleStoryManagedPath)/MoonSharp.Interpreter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Smooth.Foundations">
+      <HintPath>$(CastleStoryManagedPath)/Smooth.Foundations.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

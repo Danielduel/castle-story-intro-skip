@@ -1,0 +1,7 @@
+## NOTES
+
+Create a `.env` file and fill it with:
+
+`PATH_TO_CASTLE_STORY="path/to/steamapps/common/Castle Story"`
+
+You can do that by setting environment variable
